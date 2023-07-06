@@ -21,11 +21,9 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - name: Yarn Install
-      working-directory: client
       run: |
         yarn install
     - name: Production Build
-      working-directory: client
       run: |
         cd louie-cloud
         yarn build
@@ -33,6 +31,7 @@ jobs:
       uses: jakejarvis/s3-sync-action@master
       with:
         args: --acl public-read --delete
+      working-directory: ./louie-cloud
       env:
         AWS_S3_BUCKET: ${{ secrets.AWS_PRODUCTION_BUCKET_NAME }}
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
