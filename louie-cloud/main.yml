@@ -22,12 +22,13 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - name: Yarn Install
-      working-directory: ./louie-cloud
       run: |
+        cd ./louie-cloud
         yarn install
     - name: Production Build
       working-directory: ./louie-cloud
       run: |
+        cd ./louie-cloud
         yarn build
     - name: Deploy to S3
       working-directory: ./louie-cloud
