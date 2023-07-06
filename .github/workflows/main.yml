@@ -30,7 +30,6 @@ jobs:
         cd louie-cloud
         yarn build
     - name: Deploy to S3
-      working-directory: client
       uses: jakejarvis/s3-sync-action@master
       with:
         args: --acl public-read --delete
