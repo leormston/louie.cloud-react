@@ -38,3 +38,19 @@
     transform: rotate(360deg);
   }
 }
+
+.footer {
+
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 200px;
+  background-color: #383040;
+  color: white;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  vertical-align: auto;
+}
+
