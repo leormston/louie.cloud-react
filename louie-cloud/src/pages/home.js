@@ -1,17 +1,17 @@
 import * as React from 'react';
-import lg_logo from '../images/lg_logo.png';
-
+import LogoBanner from '../components/logoBanner';
+import HomeCards from '../components/homeCards';
+import TechStack from '../components/techStack';
+import { createTheme } from '@mui/material/styles';
+const darkTheme = createTheme({ palette: { mode: 'dark' } });
 
 export default function Home() {
     return (
-        <div>
-            <header className="App-header">
-                <img src={lg_logo} height="200px" width="200px" alt="logo" />
-
-                <p>louie.cloud</p>
-                <small style={{color: "grey"}}>coming soon</small>
-
-            </header>
+        <div >
+            <LogoBanner/>
+            <TechStack theme={darkTheme}/>
+            <HomeCards theme={darkTheme}/>
+            
         </div>  
     )
 };
