@@ -25,21 +25,3 @@ export default function LogoBanner() {
     )
 };
 
-
-//ado 
-//aws
-//python
-//java
-//react
-//node
-//javascript
-//sql
-//firebase
-//github
-//vscode
-//linux
-//docker
-//terraform
-//kubernetes
-//typescript
-//html
