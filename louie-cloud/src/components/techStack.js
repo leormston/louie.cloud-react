@@ -30,7 +30,7 @@ export default function TechStack(props) {
                         <CardWithButtons title={"My Tech Stack"} 
                         description={[ "I'm, always up to using the latest and best technology wherever possible. In the past I have worked with Python, JavaScript, Java and their respective frameworks and popular packages. " , 
                         " I am particularly interest in React due to speed and ease of use. The two cloud providers I use the most are Google and AWS of which I prefer to use IAC tools such as Terraform and CloudFormation." ,
-                        "In the graphic I have listed some of the technologies and services I work with on a daily basis"]} theme={props.theme} buttonText={"Read More"}/>
+                        "In the graphic I have listed some of the technologies and services I work with on a daily basis"]} theme={props.theme} buttonText={"Read More"} buttonHref={"/bio"}/>
 
                     </Grid>
                     <Grid item md={6}>

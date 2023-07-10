@@ -14,7 +14,7 @@ export default function CardWithButtons(props) {
                 })}
             </div>
             {props.buttonText &&<div style={{flexGrow: 1, flex: 1, alignSelf: "flex-end", display: "flex"}}>
-                <Button variant="contained" sx={{bgcolor: "#6a75dc", alignSelf: "flex-end"}}>{props.buttonText}</Button>
+                <Button href={props.buttonHref} variant="contained" sx={{bgcolor: "#6a75dc", alignSelf: "flex-end"}}>{props.buttonText}</Button>
             </div>}
 
         </Paper>

@@ -16,7 +16,7 @@ export default function LogoBanner() {
                     <Box className="center">
                     <h2>Hi, I'm Louie</h2>
                     <p style={{ width: "100%"}}>I'm a Software Engineer based in the UK. I'm currently working as a DevOps SRE @ Vodafone UK<br/> <br/> I &nbsp; 💜 &nbsp; Solving Problems, Building Solutions &amp; Coding Cool Things &nbsp;😏</p>
-                        <Button variant="contained" sx={{bgcolor: "#6a75dc"}}>Find Out More</Button>
+                        <Button href="/bio" variant="contained" sx={{bgcolor: "#6a75dc"}}>Find Out More</Button>
                     </Box>
                     
                 </Grid>

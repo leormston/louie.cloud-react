@@ -84,7 +84,7 @@ export default function Navbar() {
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
+                <MenuItem  key={page} onClick={() => window.location.replace(page)}>
                   <Typography textAlign="center">{page}</Typography>
                 </MenuItem>
               ))}
