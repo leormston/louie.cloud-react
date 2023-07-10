@@ -7,7 +7,7 @@ const darkTheme = createTheme({ palette: { mode: 'dark' } });
 export default function Bio() {
     return (
         <div>
-           <p>Bio</p>
+           <p>Bio Page</p>
            <TechStack theme={darkTheme}/>
         </div>  
     )
