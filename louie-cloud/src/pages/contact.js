@@ -7,7 +7,7 @@ import Button from '@mui/material/Button';
 export default function Contact(props) {
     return (
         <ThemeProvider theme={props.theme}>
-             <h1>Contact</h1>
+             <h1>Contact Me</h1>
             
             <Grid container spacing={2}>
 
