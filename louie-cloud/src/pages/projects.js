@@ -16,9 +16,9 @@ export default function Projects(props) {
                     imgUrls={["https://madewithdemo.com/wp-content/uploads/2021/10/d588abeef753fe62f5c1971949368f2a.png",
                     "https://madewithdemo.com/wp-content/uploads/2021/10/d588abeef753fe62f5c1971949368f2a.png",
                     "https://madewithdemo.com/wp-content/uploads/2021/10/d588abeef753fe62f5c1971949368f2a.png"]} 
-                    gitUrl={"www.github.com"} 
-                    projectUrl={"www.github.com"} 
-                    architectureDiagramUrl={"www.github.com"}/>
+                    gitUrl={"https://www.github.com"} 
+                    projectUrl={"https://www.github.com"} 
+                    architectureDiagramUrl={"https://www.github.com"}/>
                 </Grid>
                 <Grid item xs={12} md={6} lg={4}>
                     <ProjectCard 
@@ -28,9 +28,9 @@ export default function Projects(props) {
                     imgUrls={["https://madewithdemo.com/wp-content/uploads/2021/10/d588abeef753fe62f5c1971949368f2a.png",
                     "https://madewithdemo.com/wp-content/uploads/2021/10/d588abeef753fe62f5c1971949368f2a.png",
                     "https://madewithdemo.com/wp-content/uploads/2021/10/d588abeef753fe62f5c1971949368f2a.png"]} 
-                    gitUrl={"www.github.com"} 
-                    projectUrl={"www.github.com"} 
-                    architectureDiagramUrl={"www.github.com"}/>
+                    gitUrl={"https://www.github.com"} 
+                    projectUrl={"https://www.github.com"} 
+                    architectureDiagramUrl={"https://www.github.com"}/>
                 </Grid>
                 <Grid item xs={12} md={6} lg={4}>
                     <ProjectCard 
@@ -40,9 +40,9 @@ export default function Projects(props) {
                     imgUrls={["https://madewithdemo.com/wp-content/uploads/2021/10/d588abeef753fe62f5c1971949368f2a.png",
                     "https://madewithdemo.com/wp-content/uploads/2021/10/d588abeef753fe62f5c1971949368f2a.png",
                     "https://madewithdemo.com/wp-content/uploads/2021/10/d588abeef753fe62f5c1971949368f2a.png"]} 
-                    gitUrl={"www.github.com"} 
-                    projectUrl={"www.github.com"} 
-                    architectureDiagramUrl={"www.github.com"}/>
+                    gitUrl={"https://www.github.com"} 
+                    projectUrl={"https://www.github.com"} 
+                    architectureDiagramUrl={"https://www.github.com"}/>
                 </Grid>
                 <Grid item xs={12} md={6} lg={4}>
                     <ProjectCard 
@@ -52,9 +52,9 @@ export default function Projects(props) {
                     imgUrls={["https://madewithdemo.com/wp-content/uploads/2021/10/d588abeef753fe62f5c1971949368f2a.png",
                     "https://madewithdemo.com/wp-content/uploads/2021/10/d588abeef753fe62f5c1971949368f2a.png",
                     "https://madewithdemo.com/wp-content/uploads/2021/10/d588abeef753fe62f5c1971949368f2a.png"]} 
-                    gitUrl={"www.github.com"} 
-                    projectUrl={"www.github.com"} 
-                    architectureDiagramUrl={"www.github.com"}/>
+                    gitUrl={"https://www.github.com"} 
+                    projectUrl={"https://www.github.com"} 
+                    architectureDiagramUrl={"https://www.github.com"}/>
                 </Grid>
                 <Grid item xs={12} md={6} lg={4}>
                     <ProjectCard 
