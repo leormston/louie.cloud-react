@@ -17,38 +17,38 @@ export default function Socials() {
                     </h2>
                     <Grid container spacing={2}>
                         <Grid item xs={4} sm={2}  >
-                            <div className="hover" onClick={() => window.location.replace("https://www.linkedin.com/in/louie-ormston-48810a150/")}>
+                            <div className="hover customIcon" onClick={() => window.location.replace("https://www.linkedin.com/in/louie-ormston-48810a150/")}>
                                 <img src="https://img.icons8.com/color/48/000000/linkedin.png" alt="linkedin"/>
                                 <p>LinkedIn</p>
                             </div>
                             
                         </Grid>
                         <Grid item xs={4} sm={2}>
-                            <div className="hover" onClick={() => window.location.replace("https://github.com/leormston")}>
+                            <div className="hover customIcon" onClick={() => window.location.replace("https://github.com/leormston")}>
                                 <img src="https://img.icons8.com/color/48/000000/github--v1.png"  alt="github"/>
                                 <p>GitHub</p>
                             </div>
                         </Grid>
                         <Grid item xs={4} sm={2}>
-                            <div className="hover" onClick={() => window.location.replace("https://twitter.com/louie_ormston")}>
+                            <div className="hover customIcon" onClick={() => window.location.replace("https://twitter.com/louie_ormston")}>
                             <img src="https://img.icons8.com/color/48/000000/twitter--v1.png"  alt="twitter"/>
                             <p>Twitter</p>
                             </div>
                         </Grid>
                         <Grid item xs={4} sm={2} onClick={() => window.location.replace("https://www.instagram.com/louie_ormston/")}>
-                            <div className="hover">
+                            <div className="hover customIcon">
                             <img src="https://img.icons8.com/color/48/000000/instagram-new--v1.png"  alt="instagram"/>
                             <p>Instagram</p>
                             </div>
                         </Grid>
                         <Grid item xs={4} sm={2}>
-                            <div className="hover" onClick={() => window.location.replace("https://leetcode.com/louieormston/")}>
+                            <div className="hover customIcon" onClick={() => window.location.replace("https://leetcode.com/louieormston/")}>
                                 <img src={leetcode} height="48px"  alt="leetcode"/>
                                 <p>LeetCode</p>
                             </div>
                         </Grid>
                         <Grid item xs={4} sm={2}  >
-                            <div className="hover"  onClick={() => window.location.replace("https://www.hackerrank.com/l_e_ormston?hr_r=1")}>
+                            <div className="hover customIcon"  onClick={() => window.location.replace("https://www.hackerrank.com/l_e_ormston?hr_r=1")}>
                             <img src={hackerrank} height="48px"  alt="hackerank"/>
                             <p>HackerRank</p>
                             </div>

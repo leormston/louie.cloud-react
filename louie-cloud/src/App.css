@@ -63,8 +63,19 @@
 }
 .hover:hover {
   background-color: #00000022 !important;
-  width: 120px;
-  margin: auto;
+  
   padding: 5px;
   border-radius: 10%;
+}
+
+.customIcon:hover {
+  width: 120px;
+  margin: auto;
+}
+
+.linkIcon
+{
+  height: 48px;
+  display: flex;
+  align-items: center;
 }

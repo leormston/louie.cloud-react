@@ -3,6 +3,7 @@ import './App.css';
 
 //packages
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { createTheme } from '@mui/material/styles';
 
 //Components
 import Navbar from './components/navbar';
@@ -15,6 +16,10 @@ import Bio from './pages/bio';
 import Contact from './pages/contact';
 import Blog from './pages/blog';
 
+const darkTheme = createTheme({ palette: { mode: 'dark' } });
+
+
+
 function App() {
   return (
     <div className="App">
@@ -22,11 +27,11 @@ function App() {
       <div className="innerBody">
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/projects" element={<Projects />} />
-            <Route path="/bio" element={<Bio />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/blog" element={<Blog />} />
+            <Route path="/" element={<Home theme={darkTheme}/>} />
+            <Route path="/projects" element={<Projects theme={darkTheme}/>} />
+            <Route path="/bio" element={<Bio theme={darkTheme}/>} />
+            <Route path="/contact" element={<Contact theme={darkTheme}/>} />
+            <Route path="/blog" element={<Blog theme={darkTheme}/>} />
           </Routes>
         </BrowserRouter>
       </div>
