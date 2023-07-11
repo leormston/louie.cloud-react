@@ -9,7 +9,7 @@ export default function AboutMe() {
         <Grid container spacing={2}>
             <Grid item xs={12} sm={2}>
                 <Paper elevation={3} sx={{ p: 1, margin: 'auto',  flexGrow: 1 }}>
-                    <img src={headshot} width="100%"></img>
+                    <img src={headshot} width="100%"  alt="my face"></img>
                 </Paper>
             </Grid>
             <Grid item xs={12} sm={10}>
