@@ -3,7 +3,6 @@ import { Grid } from '@mui/material';
 import { ThemeProvider } from '@mui/material/styles';
 import CardWithButtons from './cardWithButton';
 
-//mui theme
 
 
 export default function HomeCards(props) {
