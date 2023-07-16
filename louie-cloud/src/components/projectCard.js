@@ -21,7 +21,7 @@ export default function ProjectCard(props) {
                     >
                     {props.imgUrls && props.imgUrls.map((url) => <SwiperSlide><img src={url} alt="screenshot" height="200px"></img></SwiperSlide>)}
                 </Swiper>
-                {}
+                
                 <p>{props.description}</p>
                 {props.gitUrl &&
                 <div className="hover linkIcon" onClick={() => window.location.replace(props.gitUrl)} >

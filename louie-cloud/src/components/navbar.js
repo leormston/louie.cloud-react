@@ -129,7 +129,8 @@ export default function Navbar() {
                 variant="h6"
                 noWrap
                 component="a"
-                href= {page}
+
+                onClick={() =>window.location.replace("/" + page.toLowerCase())}
                 sx={{
                     mr: 2,
                     display: { xs: 'none', md: 'flex' },
