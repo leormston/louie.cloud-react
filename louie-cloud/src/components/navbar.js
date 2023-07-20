@@ -51,16 +51,50 @@ export default function Navbar(props) {
               color: 'inherit',
               textDecoration: 'none',
               height: "50px",
-              alignItems: "center",
-
+              alignItems: "center"
             }}
           >
             louie.cloud
           </Typography>
           </Box>
           
-          
-         
+
+          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+            <IconButton
+              size="large"
+              aria-label="account of current user"
+              aria-controls="menu-appbar"
+              aria-haspopup="true"
+              onClick={handleOpenNavMenu}
+              color="inherit"
+            >
+              <MenuIcon />
+            </IconButton>
+            <Menu
+              id="menu-appbar"
+              anchorEl={anchorElNav}
+              anchorOrigin={{
+                vertical: 'bottom',
+                horizontal: 'left',
+              }}
+              keepMounted
+              transformOrigin={{
+                vertical: 'top',
+                horizontal: 'left',
+              }}
+              open={Boolean(anchorElNav)}
+              onClose={handleCloseNavMenu}
+              sx={{
+                display: { xs: 'block', md: 'none' },
+              }}
+            >
+              {pages.map((page) => (
+                <MenuItem  key={page} onClick={() => window.location.replace(page)}>
+                  <Typography textAlign="center">{page}</Typography>
+                </MenuItem>
+              ))}
+            </Menu>
+          </Box>
 
           <Box sx={{
               display: { xs: 'flex', md: 'none' },
@@ -102,7 +136,8 @@ export default function Navbar(props) {
                 variant="h6"
                 noWrap
                 component="a"
-                href= {page}
+
+                onClick={() =>window.location.replace("/" + page.toLowerCase())}
                 sx={{
                     mr: 2,
                     display: { xs: 'none', md: 'flex' },
@@ -117,18 +152,6 @@ export default function Navbar(props) {
                 </Typography>
             ))}
           </Box>
-          <Box sx={{ display: { xs: 'flex', md: 'flex' }, textAlign: "right", height: "50px", alignItems: "center"}}>
-          <Switch onChange={() => {
-            props.setCssTheme(props.cssTheme === "dark" ? "light" : "dark")
-            props.setTheme(props.theme === darkTheme ?  lightTheme: darkTheme)
-            localStorage.setItem("theme", props.cssTheme === "dark" ? "light" : "dark")
-          }
-            } />
-          <Typography
-            variant="h6"
-            noWrap
-            component="a"
-            sx={{
 
                 
                 fontWeight: 300,

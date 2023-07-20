@@ -16,7 +16,7 @@ import Projects from './pages/projects';
 import Bio from './pages/bio';
 import Contact from './pages/contact';
 import Blog from './pages/blog';
-
+import BlogExpand from './pages/blogExpand';
 const darkTheme = createTheme({ palette: { mode: 'dark' } });
 const lightTheme = createTheme({ palette: { mode: 'light' } });
 
@@ -40,6 +40,8 @@ function App() {
             <Route path="/bio" element={<Bio theme={theme}/>} />
             <Route path="/contact" element={<Contact theme={theme}/>} />
             <Route path="/blog" element={<Blog theme={theme}/>} />
+            <Route path="*" element={<Home theme={theme}/>} />
+            <Route path="/blog/:blogId" element={<BlogExpand theme={theme}/>} />
           </Routes>
         </BrowserRouter>
       </div>
