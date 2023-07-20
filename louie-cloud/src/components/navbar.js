@@ -154,6 +154,20 @@ export default function Navbar(props) {
           </Box>
 
                 
+          <Box sx={{ display: { xs: 'flex', md: 'flex' }, textAlign: "right", height: "50px", alignItems: "center"}}>
+          <Switch onChange={() => {
+            props.setCssTheme(props.cssTheme === "dark" ? "light" : "dark")
+            props.setTheme(props.theme === darkTheme ?  lightTheme: darkTheme)
+            localStorage.setItem("theme", props.cssTheme === "dark" ? "light" : "dark")
+          }
+            } />
+          <Typography
+            variant="h6"
+            noWrap
+            component="a"
+            sx={{
+
+                
                 fontWeight: 300,
                 fontSize: "0.7rem",
                 letterSpacing: '.05rem',
@@ -162,7 +176,8 @@ export default function Navbar(props) {
             }}
             >
                   {props.cssTheme + " Mode"}  
-          </Typography>
+            </Typography>
+          </Box>
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
               size="medium"
@@ -199,7 +214,7 @@ export default function Navbar(props) {
               ))}
             </Menu>
           </Box>
-          </Box>
+
         </Toolbar>
       </Container>
     </AppBar>
