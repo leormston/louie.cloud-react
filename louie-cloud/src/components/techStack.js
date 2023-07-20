@@ -25,7 +25,7 @@ export default function TechStack(props) {
     return (
             
             <ThemeProvider theme={props.theme}>
-                <Grid container >
+                <Grid container spacing={3}>
                     <Grid item md={6}>
                         <CardWithButtons title={"My Tech Stack"} 
                         description={[ "I'm, always up to using the latest and best technology wherever possible. In the past I have worked with Python, JavaScript, Java and their respective frameworks and popular packages. " , 
