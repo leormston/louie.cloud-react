@@ -4,7 +4,8 @@ import './App.css';
 //packages
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { createTheme } from '@mui/material/styles';
-
+import { ThemeProvider } from '@mui/material/styles';
+import { useState } from 'react';
 //Components
 import Navbar from './components/navbar';
 import Footer from './components/footer.';
@@ -17,25 +18,33 @@ import Contact from './pages/contact';
 import Blog from './pages/blog';
 
 const darkTheme = createTheme({ palette: { mode: 'dark' } });
+const lightTheme = createTheme({ palette: { mode: 'light' } });
 
-
+if (localStorage.getItem("theme") === null) {
+  localStorage.setItem("theme", "dark");
+}
 
 function App() {
+  const [theme, setTheme] = useState(localStorage.getItem("theme") === "dark" ? darkTheme : lightTheme);
+  const [cssTheme, setCssTheme] = useState(localStorage.getItem("theme"));
+  
   return (
     <div className="App">
-      <Navbar />
-      <div className="innerBody">
+      <ThemeProvider theme={theme}>
+      <Navbar theme={theme} setTheme={setTheme} cssTheme={cssTheme} setCssTheme={setCssTheme}/>
+      <div className={"innerBody "+  cssTheme}>
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<Home theme={darkTheme}/>} />
-            <Route path="/projects" element={<Projects theme={darkTheme}/>} />
-            <Route path="/bio" element={<Bio theme={darkTheme}/>} />
-            <Route path="/contact" element={<Contact theme={darkTheme}/>} />
-            <Route path="/blog" element={<Blog theme={darkTheme}/>} />
+            <Route path="/" element={<Home theme={theme} cssTheme={cssTheme}/>} />
+            <Route path="/projects" element={<Projects theme={theme}/>} />
+            <Route path="/bio" element={<Bio theme={theme}/>} />
+            <Route path="/contact" element={<Contact theme={theme}/>} />
+            <Route path="/blog" element={<Blog theme={theme}/>} />
           </Routes>
         </BrowserRouter>
       </div>
       <Footer />
+      </ThemeProvider>
     </div>
   );
 }

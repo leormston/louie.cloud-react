@@ -7,13 +7,18 @@ import MenuIcon from '@mui/icons-material/Menu';
 import lg_logo from '../images/lg_logo.png';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
+import { createTheme } from '@mui/material/styles';
+import { Switch } from '@mui/material';
 
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 
+const darkTheme = createTheme({ palette: { mode: 'dark' } });
+const lightTheme = createTheme({ palette: { mode: 'light' } });
+
 
 const pages = ['Projects', 'Bio', 'Contact', 'Blog'];
-export default function Navbar() {
+export default function Navbar(props) {
     const [anchorElNav, setAnchorElNav] = React.useState(null);
 
 
@@ -28,7 +33,7 @@ export default function Navbar() {
 
 
     return (
-        <AppBar position="fixed" sx={{bgcolor: "#383040"}}>
+        <AppBar position="fixed" className="navStyle" sx={{backgroundColor: props.cssTheme === "light" ? "#453a4a": "#370152"}}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, mr: 1 }} >
@@ -46,17 +51,98 @@ export default function Navbar() {
               color: 'inherit',
               textDecoration: 'none',
               height: "50px",
-              alignItems: "center"
+              alignItems: "center",
+
             }}
           >
             louie.cloud
           </Typography>
           </Box>
           
+          
+         
 
+          <Box sx={{
+              display: { xs: 'flex', md: 'none' },
+              flexGrow: 1,
+              height: "50px",
+              verticalAlign: "middle",
+              alignItems: "center",
+            }}>
+                    <Box sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} >
+            <img src={lg_logo} height="50px" width="50px"  alt="logo" style={{"marginRight": "10px"}}/>
+          </Box>
+
+          <Typography
+            variant="h5"
+            noWrap
+            component="a"
+            href=""
+            sx={{
+                // mr: 2,
+                display: { xs: 'flex', md: 'none' },
+                flexGrow: 1,
+                fontWeight: 700,
+                letterSpacing: '.1rem',
+                color: 'inherit',
+                textDecoration: 'none',
+                // verticalAlign: "middle",
+                textAlign: "left",
+                alignSelf: "left"
+            }}
+          >
+            louie.cloud
+          </Typography>
+          </Box>
+          
+          
+          <Box sx={{ display: { xs: 'none', md: 'flex' }, textAlign: "right", height: "50px", alignItems: "center"}}>
+            {pages.map((page) => (
+                <Typography
+                variant="h6"
+                noWrap
+                component="a"
+                href= {page}
+                sx={{
+                    mr: 2,
+                    display: { xs: 'none', md: 'flex' },
+                    fontWeight: 500,
+                    fontSize: "1.1rem",
+                    letterSpacing: '.1rem',
+                    color: 'inherit',
+                    textDecoration: 'none',
+                }}
+                >
+                {page}
+                </Typography>
+            ))}
+          </Box>
+          <Box sx={{ display: { xs: 'flex', md: 'flex' }, textAlign: "right", height: "50px", alignItems: "center"}}>
+          <Switch onChange={() => {
+            props.setCssTheme(props.cssTheme === "dark" ? "light" : "dark")
+            props.setTheme(props.theme === darkTheme ?  lightTheme: darkTheme)
+            localStorage.setItem("theme", props.cssTheme === "dark" ? "light" : "dark")
+          }
+            } />
+          <Typography
+            variant="h6"
+            noWrap
+            component="a"
+            sx={{
+
+                
+                fontWeight: 300,
+                fontSize: "0.7rem",
+                letterSpacing: '.05rem',
+                color: 'inherit',
+                textDecoration: 'none',
+            }}
+            >
+                  {props.cssTheme + " Mode"}  
+          </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
-              size="large"
+              size="medium"
               aria-label="account of current user"
               aria-controls="menu-appbar"
               aria-haspopup="true"
@@ -90,62 +176,7 @@ export default function Navbar() {
               ))}
             </Menu>
           </Box>
-
-          <Box sx={{
-              display: { xs: 'flex', md: 'none' },
-              flexGrow: 1,
-              height: "50px",
-              verticalAlign: "middle",
-              alignItems: "center",
-            }}>
-                    <Box sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} >
-            <img src={lg_logo} height="50px" width="50px"  alt="logo" style={{"marginRight": "10px"}}/>
           </Box>
-
-          <Typography
-            variant="h5"
-            noWrap
-            component="a"
-            href=""
-            sx={{
-                mr: 2,
-                display: { xs: 'flex', md: 'none' },
-                flexGrow: 1,
-                fontWeight: 700,
-                letterSpacing: '.1rem',
-                color: 'inherit',
-                textDecoration: 'none',
-                verticalAlign: "middle",
-            }}
-          >
-            louie.cloud
-          </Typography>
-          </Box>
-          
-          
-          <Box sx={{ display: { xs: 'none', md: 'flex' }, textAlign: "right", height: "50px", alignItems: "center"}}>
-            {pages.map((page) => (
-                <Typography
-                variant="h6"
-                noWrap
-                component="a"
-                href= {page}
-                sx={{
-                    mr: 2,
-                    display: { xs: 'none', md: 'flex' },
-                    fontWeight: 500,
-                    fontSize: "1.1rem",
-                    letterSpacing: '.1rem',
-                    color: 'inherit',
-                    textDecoration: 'none',
-                }}
-                >
-                {page}
-                </Typography>
-            ))}
-          </Box>
-
-    
         </Toolbar>
       </Container>
     </AppBar>
