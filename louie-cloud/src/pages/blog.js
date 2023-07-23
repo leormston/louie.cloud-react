@@ -7,8 +7,9 @@ export default function Blog(props) {
     return (
         <ThemeProvider theme={props.theme}>
             <div>
-            <p>My Blog</p>
-            <Grid container spacing={6}>
+            <h2>My Blog</h2>
+            <p>A bunch of stuff I have written in the past. Feel free to read, reference or share.</p>
+            <Grid container spacing={3} style={{paddingTop: "40px"}}>
                 <Grid item xs={12} md={6} lg={4}>
                     <BlogCard title="Article Title" 
                     description="Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum"  

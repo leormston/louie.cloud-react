@@ -7,15 +7,10 @@ import MenuIcon from '@mui/icons-material/Menu';
 import lg_logo from '../images/lg_logo.png';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
-import { createTheme } from '@mui/material/styles';
 import { Switch } from '@mui/material';
 
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
-
-const darkTheme = createTheme({ palette: { mode: 'dark' } });
-const lightTheme = createTheme({ palette: { mode: 'light' } });
-
 
 const pages = ['Projects', 'Bio', 'Contact', 'Blog'];
 export default function Navbar(props) {
@@ -113,14 +108,12 @@ export default function Navbar(props) {
             component="a"
             href=""
             sx={{
-                // mr: 2,
                 display: { xs: 'flex', md: 'none' },
                 flexGrow: 1,
                 fontWeight: 700,
                 letterSpacing: '.1rem',
                 color: 'inherit',
                 textDecoration: 'none',
-                // verticalAlign: "middle",
                 textAlign: "left",
                 alignSelf: "left"
             }}
@@ -156,9 +149,8 @@ export default function Navbar(props) {
                 
           <Box sx={{ display: { xs: 'flex', md: 'flex' }, textAlign: "right", height: "50px", alignItems: "center"}}>
           <Switch onChange={() => {
-            props.setCssTheme(props.cssTheme === "dark" ? "light" : "dark")
-            props.setTheme(props.theme === darkTheme ?  lightTheme: darkTheme)
             localStorage.setItem("theme", props.cssTheme === "dark" ? "light" : "dark")
+            props.setCssTheme(props.cssTheme === "dark" ? "light" : "dark")
           }
             } />
           <Typography
@@ -166,8 +158,6 @@ export default function Navbar(props) {
             noWrap
             component="a"
             sx={{
-
-                
                 fontWeight: 300,
                 fontSize: "0.7rem",
                 letterSpacing: '.05rem',
