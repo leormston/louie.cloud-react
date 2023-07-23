@@ -32,6 +32,13 @@
 
 }
 
+@media only screen and (min-width: 1200px) {
+  .innerBody {
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+}
+
 .dark {
   background-color: #282c34;
   color: white;

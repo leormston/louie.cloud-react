@@ -24,19 +24,19 @@ export default function ProjectCard(props) {
                 
                 <p>{props.description}</p>
                 {props.gitUrl &&
-                <div className="hover linkIcon" onClick={() => window.location.replace(props.gitUrl)} >
-                    <img src="https://img.icons8.com/color/48/000000/github--v1.png"  alt="github" style={{alignSelf: "flex-end"}}/>
+                <div className="hover linkIcon" onClick={() => window.open(props.gitUrl)} >
+                    <img src="https://img.icons8.com/color/48/000000/github--v1.png" alt="github" style={{alignSelf: "flex-end"}}/>
                     <p style={{display: "inline-block", paddingLeft: "10px"}}>GitHub Project</p>
                 </div>
                 }
                 {props.projectUrl &&
-                <div className="hover linkIcon" onClick={() => window.location.replace(props.projectUrl)} >
+                <div className="hover linkIcon" onClick={() => window.open(props.projectUrl)} >
                     <img src={link}  alt="link" height="48px" style={{alignSelf: "flex-end"}}/>
                     <p style={{display: "inline-block", paddingLeft: "10px"}}>Project Url</p>
                 </div>
                 }
                 {props.architectureDiagramUrl &&
-                <div className="hover linkIcon" onClick={() => window.location.replace(props.projectUrl)} >
+                <div className="hover linkIcon" onClick={() => window.open(props.projectUrl)} >
                     <img src={house}  alt="link" height="48px" style={{alignSelf: "flex-end"}}/>
                     <p style={{display: "inline-block", paddingLeft: "10px"}}>Architecture Diagram</p>
                 </div>

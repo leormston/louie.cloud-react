@@ -20,28 +20,34 @@ import BlogExpand from './pages/blogExpand';
 const darkTheme = createTheme({ palette: { mode: 'dark' } });
 const lightTheme = createTheme({ palette: { mode: 'light' } });
 
-if (localStorage.getItem("theme") === null) {
+var localTheme = ""
+if (localStorage.getItem("theme") == null) {
   localStorage.setItem("theme", "dark");
+  localTheme = "dark"
+}
+else {
+  localTheme = localStorage.getItem("theme");
 }
 
 function App() {
-  const [theme, setTheme] = useState(localStorage.getItem("theme") === "dark" ? darkTheme : lightTheme);
-  const [cssTheme, setCssTheme] = useState(localStorage.getItem("theme"));
-  
+
+  const [cssTheme, setCssTheme] = useState(localTheme);
+
+
   return (
     <div className="App">
-      <ThemeProvider theme={theme}>
-      <Navbar theme={theme} setTheme={setTheme} cssTheme={cssTheme} setCssTheme={setCssTheme}/>
+      <ThemeProvider theme={cssTheme === "light" ? lightTheme : darkTheme}>
+      <Navbar theme={cssTheme === "light" ? lightTheme : darkTheme} cssTheme={cssTheme} setCssTheme={setCssTheme}/>
       <div className={"innerBody "+  cssTheme}>
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<Home theme={theme} cssTheme={cssTheme}/>} />
-            <Route path="/projects" element={<Projects theme={theme}/>} />
-            <Route path="/bio" element={<Bio theme={theme}/>} />
-            <Route path="/contact" element={<Contact theme={theme}/>} />
-            <Route path="/blog" element={<Blog theme={theme}/>} />
-            <Route path="*" element={<Home theme={theme}/>} />
-            <Route path="/blog/:blogId" element={<BlogExpand theme={theme}/>} />
+            <Route path="/" element={<Home theme={cssTheme === "light" ? lightTheme : darkTheme} cssTheme={cssTheme}/>} />
+            <Route path="/projects" element={<Projects theme={cssTheme === "light" ? lightTheme : darkTheme}/>} />
+            <Route path="/bio" element={<Bio theme={cssTheme === "light" ? lightTheme : darkTheme}/>} />
+            <Route path="/contact" element={<Contact theme={cssTheme === "light" ? lightTheme : darkTheme}/>} />
+            <Route path="/blog" element={<Blog theme={cssTheme === "light" ? lightTheme : darkTheme}/>} />
+            <Route path="*" element={<Home theme={cssTheme === "light" ? lightTheme : darkTheme}/>} />
+            <Route path="/blog/:blogId" element={<BlogExpand theme={cssTheme === "light" ? lightTheme : darkTheme}/>} />
           </Routes>
         </BrowserRouter>
       </div>
