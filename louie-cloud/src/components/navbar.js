@@ -31,7 +31,7 @@ export default function Navbar(props) {
         <AppBar position="fixed" className="navStyle" sx={{backgroundColor: props.cssTheme === "light" ? "#453a4a": "#370152"}}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, mr: 1 }} >
+          <Box sx={{ flexGrow: 1, display: { xs: 'none', sm: 'none', md: 'flex' }, mr: 1 }} >
             <img src={lg_logo} height="50px" width="50px"  alt="logo" style={{"marginRight": "20px"}}/>
             <Typography
             variant="h6"
@@ -54,7 +54,7 @@ export default function Navbar(props) {
           </Box>
           
 
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+          <Box sx={{ flexGrow: 1, display: { xs: 'flex', sm: 'flex', md: 'none' } }}>
             <IconButton
               size="large"
               aria-label="account of current user"
@@ -62,6 +62,7 @@ export default function Navbar(props) {
               aria-haspopup="true"
               onClick={handleOpenNavMenu}
               color="inherit"
+              style ={{marginLeft: "-20px" }}
             >
               <MenuIcon />
             </IconButton>
@@ -89,9 +90,7 @@ export default function Navbar(props) {
                 </MenuItem>
               ))}
             </Menu>
-          </Box>
-
-          <Box sx={{
+            <Box sx={{
               display: { xs: 'flex', md: 'none' },
               flexGrow: 1,
               height: "50px",
@@ -121,6 +120,9 @@ export default function Navbar(props) {
             louie.cloud
           </Typography>
           </Box>
+          </Box>
+
+          
           
           
           <Box sx={{ display: { xs: 'none', md: 'flex' }, textAlign: "right", height: "50px", alignItems: "center"}}>
@@ -147,12 +149,12 @@ export default function Navbar(props) {
           </Box>
 
                 
-          <Box sx={{ display: { xs: 'flex', md: 'flex' }, textAlign: "right", height: "50px", alignItems: "center"}}>
-          <Switch onChange={() => {
+          <Box sx={{ display: { xs: 'flex', md: 'flex' },textAlign: "right", height: "50px", alignItems: "center"}}>
+          <Switch  onChange={() => {
             localStorage.setItem("theme", props.cssTheme === "dark" ? "light" : "dark")
             props.setCssTheme(props.cssTheme === "dark" ? "light" : "dark")
           }
-            } />
+            }  size="small"/>
           <Typography
             variant="h6"
             noWrap
@@ -165,20 +167,11 @@ export default function Navbar(props) {
                 textDecoration: 'none',
             }}
             >
-                  {props.cssTheme + " Mode"}  
+                  {props.cssTheme}  
             </Typography>
           </Box>
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
-            <IconButton
-              size="medium"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              onClick={handleOpenNavMenu}
-              color="inherit"
-            >
-              <MenuIcon />
-            </IconButton>
+          <Box sx={{ flexGrow: 1, display: { xs: 'none', sm: 'none', md: 'none' } }}>
+            
             <Menu
               id="menu-appbar"
               anchorEl={anchorElNav}
