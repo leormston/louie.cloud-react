@@ -3,6 +3,7 @@ import { ThemeProvider } from '@mui/material/styles';
 import { useParams } from "react-router-dom";
 import { Box } from '@mui/system';
 import {Swiper, SwiperSlide} from 'swiper/react';
+import ReactMarkdown  from 'react-markdown';
 import 'swiper/css';
 
 let imgUrls = [
@@ -10,6 +11,9 @@ let imgUrls = [
     "https://i.imgur.com/1Z9Q4ZS.png",
     "https://i.imgur.com/1Z9Q4ZS.png",
 ]
+
+let markdown = '# This is a header\n\nAnd this is a paragraph\n```js\nconsole.log("Hello World")```\n\n'
+
 export default function BlogExpand(props) {
 
     let { blogId } = useParams();
@@ -29,8 +33,12 @@ export default function BlogExpand(props) {
                 <p>{blogId}</p>
                 <p><small>Blog Date, Blog Author</small></p>
                 <p>Blog Content</p>
+                <div className="blogMarkdown">
+                <ReactMarkdown children={markdown}/>
+                </div>
             </Box>
-           
+            
+   
         </ThemeProvider>
     )
 };

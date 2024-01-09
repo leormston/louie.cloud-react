@@ -1,16 +1,16 @@
 import * as React from 'react';
-import { Grid } from '@mui/material';
-import ProjectCard from '../components/projectCard';
+// import { Grid } from '@mui/material';
+// import ProjectCard from '../components/projectCard';
 import {CircularProgress} from '@mui/material';
 export default function Projects(props) {
-    const [projects, setProjects] = React.useState([])
+    // const [projects, setProjects] = React.useState([])
     const [loading, setLoading] = React.useState(true)
 
     React.useEffect(() => {
         fetch("https://gouvl7urne.execute-api.eu-west-1.amazonaws.com/api/projects")
         .then(res => res.json())
         .then(data => {
-            setProjects(data)
+            // setProjects(data)
             setLoading(false)
         })
     }, [])
@@ -21,7 +21,7 @@ export default function Projects(props) {
            <p>Here are some of my projects. Where applicable I have attached architecture diagrams, urls, github links and screenshots. Enjoy 😄</p>
            {loading ? <CircularProgress color="secondary"/> : 
            <div>
-           <Grid container spacing={3} style={{paddingTop: "40px"}}>
+           {/* <Grid container spacing={3} style={{paddingTop: "40px"}}>
                 {projects.map((project, index) => {
                     return (
                         <Grid item xs={12} md={6} lg={4} key={index}>
@@ -37,7 +37,11 @@ export default function Projects(props) {
                         </Grid>
                     )
                 })}
-            </Grid>
+            </Grid> */}
+            <br/>
+            <br/>
+            <br/>
+            <h4>Sorry for the inconvenience. Updated project page coming soon :)</h4>
             </div>
             }
         </div>  
