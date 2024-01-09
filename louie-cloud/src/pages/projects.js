@@ -1,16 +1,16 @@
 import * as React from 'react';
-import { Grid } from '@mui/material';
-import ProjectCard from '../components/projectCard';
+// import { Grid } from '@mui/material';
+// import ProjectCard from '../components/projectCard';
 import {CircularProgress} from '@mui/material';
 export default function Projects(props) {
-    const [projects, setProjects] = React.useState([])
+    // const [projects, setProjects] = React.useState([])
     const [loading, setLoading] = React.useState(true)
 
     React.useEffect(() => {
         fetch("https://gouvl7urne.execute-api.eu-west-1.amazonaws.com/api/projects")
         .then(res => res.json())
         .then(data => {
-            setProjects(data)
+            // setProjects(data)
             setLoading(false)
         })
     }, [])
