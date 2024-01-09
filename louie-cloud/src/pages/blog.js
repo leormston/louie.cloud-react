@@ -1,7 +1,7 @@
 import * as React from 'react';
-import BlogCard from '../components/blogCard';
+// import BlogCard from '../components/blogCard';
 import { ThemeProvider } from '@mui/material';
-import Grid from '@mui/material/Grid';
+// import Grid from '@mui/material/Grid';
 export default function Blog(props) {
 
     return (
